@@ -111,7 +111,14 @@
     </a>
   </div>
 
-  <div class="corner br">MMXXVI</div>
+  <div class="corner br" id="year"></div>
 </main>
+<script>
+  var n = new Date().getFullYear(), r = '';
+  var v = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+  var s = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+  for (var i = 0; i < v.length; i++) { while (n >= v[i]) { r += s[i]; n -= v[i]; } }
+  document.getElementById('year').textContent = r;
+</script>
 </body>
 </html>
